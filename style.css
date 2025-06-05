@@ -4,13 +4,12 @@ body, h1, h2, ul, li {
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
-    font-size: 40px;
 }
+
 body {
     background: rgb(58, 5, 25);
     color: rgb(239, 136, 173);
     line-height: 1.6;
-    text-align: center;
     font-size: 25px;
 }
 
@@ -57,70 +56,24 @@ nav ul li a:hover {
     box-shadow: 0 0 8px rgb(239, 136, 173);
 }
 
-header {
-    padding: 3rem 1.5rem 2rem;
-    text-align: center;
+.header-container {
+    display: flex;
+    align-items: center;
+    padding: 3rem 1.5rem;
     background: rgb(165, 56, 96);
     color: white;
     box-shadow: inset 0 -6px 10px rgba(0, 0, 0, 0.2);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-header h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-shadow: 0 1px 5px rgba(0,0,0,0.3);
-}
-
-main {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 2rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    
-}
-
-main .section {
-    padding: 2rem;
-    border-radius: 10px;
-    border: 2px solid rgb(248, 160, 193);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    text-align: center;
-    transition: box-shadow 0.3s ease, border-color 0.3s ease; 
-    
-    
-  
-}
-
-main section:hover {
-    box-shadow: 0 0 15px rgb(239, 136, 173);
-}
-
-main section:active {
-    box-shadow: 0 0 20px rgb(239, 136, 173); 
-    border-color: rgb(165, 56, 96); 
-}
-
-main section h2 {
-    margin-bottom: 1rem;
-    color: rgb(239, 136, 173);
-    font-weight: 700;
-    font-size: 1.5rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    letter-spacing: 0.7px;
-    text-align: center;
-}
-
-header{
+.header-content {
+    display: flex;
     align-items: center;
+    justify-content: center;
 }
-
 
 .faye-photo {
-    height: 350px; 
-    width: 350px; 
+    height: 400px; 
+    width: 400px; 
     border-radius: 50%;  
     margin-right: 2rem; 
     box-shadow: 0 0 0 rgba(0,0,0,0); 
@@ -132,26 +85,59 @@ header{
 }
 
 .header-text {
+    text-align: left;
+}
+
+.header-text h1 {
+    font-size: 4rem; 
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 0 1px 5px rgba(0,0,0,0.3);
+}
+
+.header-text p {
+    font-size: 1.5rem; 
+}
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+main .section {
+    padding: 2rem;
     text-align: center;
-    transition: text-shadow 0.3s ease;
-    font-size: 100px; 
+    transition: box-shadow 0.3s ease; 
 }
 
-.header-text:hover {
-    text-shadow: 0 0 15px rgb(165, 56, 96);
-}
-.section {
-    transition: box-shadow 0.3s ease;
+main .section h2 {
+    font-size: 3rem; /* Increased font size for section titles */
+    color: rgb(239, 136, 173);
+    font-weight: 700;
+    margin-bottom: 1rem;
 }
 
-.section:hover {
+main .section p {
+    font-size: 1.5rem; /* Increased font size for section paragraphs */
+}
+
+main section:hover {
     box-shadow: 0 0 15px rgb(239, 136, 173);
 }
-.icons{
-   height: 60px;
-   width: 50px; 
+
+main section:active {
+    box-shadow: 0 0 20px rgb(239, 136, 173); 
 }
-.iconsig{
+
+.icons {
+    height: 60px;
+    width: 50px; 
+}
+
+.iconsig {
     height: 60px;
     width: 70px;
 }
