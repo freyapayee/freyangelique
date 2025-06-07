@@ -1,38 +1,78 @@
-body, h1, h2, ul, li {
+* {
     margin: 0;
     padding: 0;
+}
+
+body, h1, ul, li {
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background: rgb(58, 5, 25);
-    color: rgb(239, 136, 173);
+    background: rgb(241, 223, 223);
     line-height: 1.6;
     font-size: 25px;
 }
 
+h2 {
+    font-family: 'Bungee', cursive;
+    text-align: center;
+    font-size: 75px;
+    color: rgb(85, 93, 80);
+}
+
+h3 {
+    font-family: 'Bungee', cursive;
+    color: rgb(244, 194, 194);
+}
+
+.social-media h3 {
+    color: rgb(85, 93, 80);
+}
+
+.skill-item p, ul {
+    color: rgb(210, 238, 158);
+}
+
 nav {
-    background-color: rgb(106, 17, 50);
+    background-color: rgb(85, 93, 80);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem 1.5rem;
     box-shadow: 0 2px 8px rgb(165, 56, 96);
+    transition: max-height 0.5s ease; /* Dropdown animation */
+    position: relative; /* Position for absolute elements */
 }
 
 .logo {
-    height: 50px;
-    width: 80px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgb(239, 136, 173);
-    cursor: pointer;
-    transition: box-shadow 0.3s ease;
+    font-size: 2rem; /* Adjust font size */
+    font-weight: bold; /* Bold text */
+    color: rgb(255, 255, 255); /* Text color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 3D effect */
+    cursor: pointer; /* Pointer cursor */
+    font-family: 'Bungee';
 }
 
-.logo:hover {
-    box-shadow: 0 0 12px rgb(239, 136, 173);
+/* Menu button styles */
+.menu-button {
+    display: none;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-button span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin-bottom: 5px;
+    transition: all 0.3s ease;
 }
 
 nav ul {
@@ -43,7 +83,7 @@ nav ul {
 
 nav ul li a {
     text-decoration: none;
-    color: rgb(255,255,255);
+    color: rgb(255, 255, 255);
     font-weight: 600;
     font-size: 1rem;
     padding: 0.35rem 0.5rem;
@@ -52,16 +92,16 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: rgb(58,5,25);
-    box-shadow: 0 0 8px rgb(239, 136, 173);
+    background-color: rgb(85, 93, 80);
+    box-shadow: 0 0 8px rgb(244, 194, 194);
 }
 
 .header-container {
     display: flex;
     align-items: center;
     padding: 3rem 1.5rem;
-    background: rgb(165, 56, 96);
-    color: white;
+    background: rgb(241, 223, 223);
+    color: rgb(85, 93, 80);
     box-shadow: inset 0 -6px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -69,38 +109,68 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
 
 .faye-photo {
     height: 400px; 
-    width: 400px; 
+    width: 450px; 
     border-radius: 50%;  
     margin-right: 2rem; 
-    box-shadow: 0 0 0 rgba(0,0,0,0); 
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0); 
     transition: box-shadow 0.3s ease; 
 }
 
 .faye-photo:hover {
-    box-shadow: 0 0 15px rgb(248, 160, 193);
+    box-shadow: 0 0 15px rgb(178, 233, 214);
 }
 
 .header-text {
     text-align: left;
+    width: 100%;
+}
+
+.subtitle {
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Bungee', cursive; /* Change font to Bungee */
 }
 
 .header-text h1 {
-    font-size: 4rem; 
+    font-size: 75px; 
     font-weight: 700;
     letter-spacing: 2px;
-    text-shadow: 0 1px 5px rgba(0,0,0,0.3);
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+    animation: grow-shrink 1s infinite;
+    font-family: 'Bungee', cursive; 
+}
+
+@keyframes grow-shrink {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05); /* Grow effect */
+    }
 }
 
 .header-text p {
     font-size: 1.5rem; 
 }
 
+/* Section Titles */
+.section-title {
+    font-family: 'Bungee', cursive; /* Change font to Bungee */
+    font-size: 3rem; /* Increased font size for section titles */
+    color: rgb(85, 93, 80);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    animation: grow-shrink 1s infinite; /* Grow and shrink animation */
+}
+
 main {
-    max-width: 900px;
+    max-width: 100%;
     margin: 2rem auto;
     padding: 2rem;
     display: grid;
@@ -111,33 +181,274 @@ main .section {
     padding: 2rem;
     text-align: center;
     transition: box-shadow 0.3s ease; 
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Start slightly below */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transition for fade-in */
 }
 
-main .section h2 {
-    font-size: 3rem; /* Increased font size for section titles */
-    color: rgb(239, 136, 173);
-    font-weight: 700;
-    margin-bottom: 1rem;
+main .section.fade-in {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to original position */
 }
 
-main .section p {
-    font-size: 1.5rem; /* Increased font size for section paragraphs */
+main .section.skills-appear {
+    opacity: 0; /* Start hidden */
+    transform: translateX(100px); /* Start from the right */
+}
+
+main .section.skills-appear.fade-in {
+    opacity: 1; /* Fully visible */
+    transform: translateX(0); /* Move to original position */
+}
+
+main .section.experiences-appear {
+    opacity: 0; /* Start hidden */
+    transform: translateX(-100px); /* Start from the left */
+}
+
+main .section.experiences-appear.fade-in {
+    opacity: 1; /* Fully visible */
+    transform: translateX(0); /* Move to original position */
+}
+
+main .section.contact-appear {
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Start from below */
+}
+
+main .section.contact-appear.fade-in {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to original position */
 }
 
 main section:hover {
-    box-shadow: 0 0 15px rgb(239, 136, 173);
+    box-shadow: 0 0 15px rgb(85, 93, 80);
+    transform: scale(1.02); /* Slightly scale up on hover */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
 }
 
 main section:active {
-    box-shadow: 0 0 20px rgb(239, 136, 173); 
+    box-shadow: 0 0 20px rgb(85, 93, 80);
 }
 
-.icons {
-    height: 60px;
-    width: 50px; 
+.social-media {
+    margin-top: 1.5rem; /* Space above social media section */
+    color: rgb(85, 93, 80);
+    font-weight: bold;
 }
 
-.iconsig {
-    height: 60px;
-    width: 70px;
+.social-icon {
+    width: 45px; /* Set width for icons */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 1rem; /* Space between icons */
+    transition: transform 0.3s; /* Smooth hover effect */
+}
+
+.social-icon:hover {
+    transform: scale(1.1); /* Scale up on hover */
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 2rem; /* Space between the blocks */
+}
+
+.skill-item {
+    background-color: rgb(51, 54, 49); /* Background color for skill items */
+    border-radius: 8px; /* Rounded corners */
+    padding: 1.5rem; /* Padding inside each skill item */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation for hover effect */
+    text-align: center; /* Center text */
+}
+
+.skill-item:hover {
+    transform: scale(1.05); /* Lift effect on hover */
+    box-shadow: 0 4px 15px rgb(85, 93, 80); /* Shadow effect on hover */
+}
+
+.skill-image {
+    height: 200px; /* Adjust size as needed */
+    width: 300px; /* Adjust size as needed */
+    margin-bottom: 0.1rem; /* Space between image and title */
+}
+
+.skill-item h3 {
+    font-size: 2rem; /* Adjust the size as needed */
+    color: rgb(244, 194, 194); /* Title color */
+    font-weight: 600; /* Font weight for titles */
+}
+
+.skill-item p {
+    font-size: 1.2rem; /* Adjust the size as needed */
+}
+
+.skill-item ul {
+    list-style-type: disc; /* Use bullet points for programming skills */
+    padding-left: 20px; /* Indent the list */
+    text-align: left; /* Align text to the left for better readability */
+}
+
+.skill-item ul li {
+    font-size: 1rem; /* Font size for list items */
+    margin-bottom: 0.5rem; /* Space between list items */
+}
+
+.experiences-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 1.5rem; /* Space between experience items */
+    width: 75%; /* Set width */
+    height: auto;
+    margin: 0 auto; /* Center the container */
+    align-items: center; /* Center items horizontally */
+}
+
+.experience-item {
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the image */
+    border-radius: 8px; /* Rounded corners */
+    padding: 2rem; /* Padding inside each experience item */
+    color: rgb(55, 56, 40);
+    position: relative; /* Position for pseudo-element */
+    overflow: hidden; /* Hide overflow */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+.experience-item:hover {
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+.experience-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.5s ease; /* Fade effect */
+}
+
+.experience-item:hover::before {
+    opacity: 1; /* Show overlay on hover */
+}
+
+.experience-item h3,
+.experience-item p {
+    position: relative; /* Position for text */
+    z-index: 1; /* Ensure text is above the overlay */
+    transition: color 0.3s ease; /* Smooth transition for text color */
+}
+
+.experience-item:hover h3,
+.experience-item:hover p {
+    color: rgb(210, 238, 158);
+}
+
+label {
+    display: block; /* Make labels block elements */
+    margin-bottom: 0.1rem; /* Space below labels */
+    font-weight: bold; /* Bold labels */
+    color: rgb(85, 93, 80);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%; /* Full width */
+    padding: 0.5rem; /* Padding inside inputs */
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 2px; /* Rounded corners */
+}
+
+textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+button {
+    background-color: rgb(85, 93, 80); /* Button background color */
+    color: white; /* Button text color */
+    padding: 0.75rem 1.5rem; /* Button padding */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1rem; /* Button font size */
+}
+
+button:hover {
+    background-color: rgb(23, 33, 16); /* Darker shade on hover */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer {
+    color: rgb(85, 93, 80);
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+    .menu-button {
+        display: block; /* Show menu button on mobile */
+    }
+
+    nav ul {
+        display: none; /* Hide the navigation list by default */
+        flex-direction: column; /* Stack items vertically */
+        position: absolute; /* Position it absolutely */
+        top: 60px; /* Position below the nav */
+        right: 0; /* Align to the right */
+        background-color: rgb(85, 93, 80); /* Background color */
+        width: 100%; /* Full width */
+        padding: 1rem; /* Padding */
+        border-radius: 5px; /* Rounded corners */
+    }
+
+    nav ul.show {
+        display: flex; /* Show the navigation list when active */
+    }
+
+    .header-container {
+        flex-direction: column; /* Stack header content vertically */
+    }
+
+    .header-content {
+        width: 100%;
+    }
+
+    .faye-photo {
+        width: 100%;
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    main {
+        max-width: 100%;
+        margin: 2rem auto;
+        padding: 2rem;
+    }
+
+    .section {
+        padding: 2rem;
+    }
+
+    .skills-container {
+        grid-template-columns: repeat(1, 1fr); /* One column on mobile */
+    }
+
+    .experiences-container {
+        width: 100%; /* Full width on mobile */
+    }
 }
