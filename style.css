@@ -102,22 +102,24 @@ nav ul li a:hover {
     background: rgb(241, 223, 223);
     color: rgb(85, 93, 80);
     box-shadow: inset 0 -6px 10px rgba(0, 0, 0, 0.2);
+    flex-direction: column; 
 }
+
 
 .header-content {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
+    flex-direction: column; 
 }
 
 .faye-photo {
-    height: 400px; 
-    width: 450px; 
+    height: auto; /* Allow height to adjust */
+    width: 100%; /* Make image responsive */
+    max-width: 450px; /* Set a max width */
     border-radius: 50%;  
-    margin-right: 2rem; 
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0); 
-    transition: box-shadow 0.3s ease; 
+    margin-bottom: 2rem; /* Add margin for spacing */
 }
 
 .faye-photo:hover {
@@ -291,18 +293,9 @@ main section:active {
     font-size: 1rem;
     margin-bottom: 0.5rem;
 }
-
-.experiences-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    width: 75%;
-    height: auto;
-    margin: 0 auto;
-    align-items: center;
-}
-
 .experience-item {
+    width: 100%; 
+    max-width: 600px; 
     background-size: cover;
     background-position: center;
     border-radius: 8px;
@@ -418,17 +411,19 @@ footer {
         display: flex;
     }
 
-    .header-container {
-        flex-direction: column;
+     .header-container {
+        padding: 2rem 1rem; 
     }
-
     .header-content {
-        width: 100%;
+        flex-direction: column; 
+        align-items: center; 
     }
 
-    .faye-photo {
-        width: 100%;
-        height: auto;
+     .faye-photo {
+        width: 100%; 
+        height: auto; 
+    }
+
     }
 
     main {
@@ -444,8 +439,15 @@ footer {
     .skills-container {
         grid-template-columns: repeat(1, 1fr);
     }
-
-    .experiences-container {
-        width: 100%;
+ .experiences-container {
+        width: 100%; /* Full width for mobile */
     }
-}
+    .experience-item {
+        width: 100%; /* Full width for mobile */
+        max-width: 100%; /* Remove max width for mobile */
+        padding: 1.5rem; /* Adjust padding for mobile */
+    }
+    .social-icon {
+        width: 40px; /* Adjust icon size for mobile */
+    }
+
