@@ -105,7 +105,6 @@ nav ul li a:hover {
     flex-direction: column; 
 }
 
-
 .header-content {
     display: flex;
     align-items: center;
@@ -115,11 +114,11 @@ nav ul li a:hover {
 }
 
 .faye-photo {
-    height: auto; /* Allow height to adjust */
-    width: 100%; /* Make image responsive */
-    max-width: 450px; /* Set a max width */
+    height: auto;
+    width: 100%;
+    max-width: 450px;
     border-radius: 50%;  
-    margin-bottom: 2rem; /* Add margin for spacing */
+    margin-bottom: 2rem;
 }
 
 .faye-photo:hover {
@@ -147,6 +146,7 @@ nav ul li a:hover {
     font-family: 'Bungee', cursive;
     text-align: center; 
 }
+
 @keyframes grow-shrink {
     0%, 100% {
         transform: scale(1);
@@ -248,7 +248,7 @@ main section:active {
     transform: scale(1.1);
 }
 
-.skills-container {
+.skills-container, .experiences-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
@@ -293,8 +293,9 @@ main section:active {
     font-size: 1rem;
     margin-bottom: 0.5rem;
 }
+
 .experience-item {
-    width: 100%; 
+    width: 75%; 
     max-width: 600px; 
     background-size: cover;
     background-position: center;
@@ -349,10 +350,10 @@ input[type="text"],
 input[type="email"],
 input[type="tel"],
 textarea {
-    width: 100%;
+    width: 45%;
     padding: 0.5rem;
     border: 1px solid #ccc;
-    border-radius: 2px;
+    border-radius: 30px;
 }
 
 textarea {
@@ -411,19 +412,18 @@ footer {
         display: flex;
     }
 
-     .header-container {
+    .header-container {
         padding: 2rem 1rem; 
     }
+
     .header-content {
         flex-direction: column; 
         align-items: center; 
     }
 
-     .faye-photo {
+    .faye-photo {
         width: 100%; 
         height: auto; 
-    }
-
     }
 
     main {
@@ -436,18 +436,34 @@ footer {
         padding: 2rem;
     }
 
-    .skills-container {
-        grid-template-columns: repeat(1, 1fr);
+    .skills-container, .experiences-container {
+        grid-template-columns: 1fr; 
     }
- .experiences-container {
-        width: 100%; /* Full width for mobile */
-    }
+
     .experience-item {
-        width: 100%; /* Full width for mobile */
-        max-width: 100%; /* Remove max width for mobile */
-        padding: 1.5rem; /* Adjust padding for mobile */
+        width: 100%; 
+        max-width: 100%; 
+        padding: 1.5rem; 
     }
+
     .social-icon {
-        width: 40px; /* Adjust icon size for mobile */
+        width: 40px; 
     }
+
+    h2 {
+        font-size: 50px; 
+    }
+
+    h3 {
+        font-size: 24px; 
+    }
+
+    .skill-item h3, .experience-item h3 {
+        font-size: 20px; 
+    }
+
+    .skill-item p, .experience-item p {
+        font-size: 14px; 
+    }
+}
 
