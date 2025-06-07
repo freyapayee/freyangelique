@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-     <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
     <title>Portfolio</title> 
 </head>
 <body>
     <nav>
         <div class="logo">freyapayee</div> 
-        <ul>
+        <button class="menu-button" id="menu-button">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul id="nav-list">
             <li><a href="#header">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#experiences">Experiences</a></li>
@@ -18,17 +23,22 @@
         </ul>
     </nav>
     
-   <header class="header-container" id="header">
+    <header class="header-container" id="header">
         <div class="header-content">
             <img src="faye.png" alt="Faye" class="faye-photo"/>
             <div class="header-text">
-                <h1 class="title">Hello, It's FAYE!</h1>
+                <h1 class="title">
+                        Hello, It's FAYE!
+                        <span data-text="Hello, It's FAYE!"></span>
+                        <span data-text="Hello, It's FAYE!"></span>
+                </h1>
                 <p class="subtitle">JUNIOR PROGRAMMER</p>
                 <p>Hello, I'm Faye Cuevas, a second year Bachelor of Science in Computer Science Student. 
                 I have a passion for coding, problem-solving, and innovative technology. I am eager to expand my skills in software development, data structures, and algorithms. I thrive on tackling challenges and learning new concepts. Whether it's building efficient programs or diving into emerging tech trends, I'm always seeking opportunities to grow and create impactful solutions.</p>
             </div>
         </div>
     </header>
+    
     <main>
         <div class="content">
             <div class="section" id="skills">
@@ -119,15 +129,15 @@
                     <button type="submit">Send Message</button>
                 </form>
                 <div class="social-media">
-                    <h3>Connect with me</h3>
+                    <h3>Connect with me:</h3>
                     <a href="https://web.facebook.com/faye.nanagadcuevas" target="blank">
-                        <img src="fb.png" alt="Facebook" class="social-icon" />
+                        <img src="facebook.png" alt="Facebook" class="social-icon" />
                     </a>
                     <a href="https://www.instagram.com/freyapayee/" target="blank">
-                        <img src="ig.png" alt="Instagram" class="social-icon" />
+                        <img src="instagram.png" alt="Instagram" class="social-icon" />
                     </a>
                     <a href="https://x.com/freyaapayee" target="blank">
-                        <img src="x.png" alt="X" class="social-icon" />
+                        <img src="twitter.png" alt="X" class="social-icon" />
                     </a>
                     <a href="https://github.com/freyapayee" target="blank">
                         <img src="github.png" alt="github" class="social-icon" />
@@ -147,13 +157,12 @@
     </footer>
 <script>
     const menuButton = document.getElementById('menu-button');
-const navList = document.getElementById('nav-list');
+    const navList = document.getElementById('nav-list');
 
-menuButton.addEventListener('click', () => {
-    navList.classList.toggle('show');
-});
+    menuButton.addEventListener('click', () => {
+        navList.classList.toggle('show');
+    });
 
-    // Smooth scrolling effect
     document.querySelectorAll('nav ul li a').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -163,7 +172,6 @@ menuButton.addEventListener('click', () => {
         });
     });
 
-    // Animation on scroll
     const sections = document.querySelectorAll('.section');
     const header = document.querySelector('.header-container');
     const options = {
@@ -185,13 +193,11 @@ menuButton.addEventListener('click', () => {
                     entry.target.classList.add('fade-in');
                 }
             } else {
-                // Remove the animation classes when the section is out of view
                 entry.target.classList.remove('fade-in', 'skills-appear', 'experiences-appear', 'contact-appear');
             }
         });
     }, options);
 
-    // Observe the header for animation
     const headerObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -206,7 +212,6 @@ menuButton.addEventListener('click', () => {
         observer.observe(section);
     });
 
-    // Observe the header
     headerObserver.observe(header);
 </script>
 </body>

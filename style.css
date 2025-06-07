@@ -3,7 +3,7 @@
     padding: 0;
 }
 
-body, h1, ul, li {
+body, ul, li {
     box-sizing: border-box;
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -42,20 +42,19 @@ nav {
     justify-content: space-between;
     padding: 0.5rem 1.5rem;
     box-shadow: 0 2px 8px rgb(165, 56, 96);
-    transition: max-height 0.5s ease; /* Dropdown animation */
-    position: relative; /* Position for absolute elements */
+    transition: max-height 0.5s ease;
+    position: relative;
 }
 
 .logo {
-    font-size: 2rem; /* Adjust font size */
-    font-weight: bold; /* Bold text */
-    color: rgb(255, 255, 255); /* Text color */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 3D effect */
-    cursor: pointer; /* Pointer cursor */
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
     font-family: 'Bungee';
 }
 
-/* Menu button styles */
 .menu-button {
     display: none;
     position: absolute;
@@ -134,24 +133,24 @@ nav ul li a:hover {
     font-size: 60px;
     font-weight: bold;
     text-align: center;
-    font-family: 'Bungee', cursive; /* Change font to Bungee */
+    font-family: 'Bungee', cursive;
 }
 
 .header-text h1 {
-    font-size: 75px; 
+    font-size: 75px !important;
     font-weight: 700;
     letter-spacing: 2px;
     text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-    animation: grow-shrink 1s infinite;
-    font-family: 'Bungee', cursive; 
+    animation: grow-shrink 1.5s infinite;
+    font-family: 'Bungee', cursive;
+    text-align: center; 
 }
-
 @keyframes grow-shrink {
     0%, 100% {
         transform: scale(1);
     }
     50% {
-        transform: scale(1.05); /* Grow effect */
+        transform: scale(1.05);
     }
 }
 
@@ -159,14 +158,13 @@ nav ul li a:hover {
     font-size: 1.5rem; 
 }
 
-/* Section Titles */
 .section-title {
-    font-family: 'Bungee', cursive; /* Change font to Bungee */
-    font-size: 3rem; /* Increased font size for section titles */
+    font-family: 'Bungee', cursive;
+    font-size: 3rem;
     color: rgb(85, 93, 80);
     font-weight: 700;
     margin-bottom: 1rem;
-    animation: grow-shrink 1s infinite; /* Grow and shrink animation */
+    animation: grow-shrink 1s infinite;
 }
 
 main {
@@ -181,50 +179,50 @@ main .section {
     padding: 2rem;
     text-align: center;
     transition: box-shadow 0.3s ease; 
-    opacity: 0; /* Start hidden */
-    transform: translateY(20px); /* Start slightly below */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Transition for fade-in */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 main .section.fade-in {
-    opacity: 1; /* Fully visible */
-    transform: translateY(0); /* Move to original position */
+    opacity: 1;
+    transform: translateY(0);
 }
 
 main .section.skills-appear {
-    opacity: 0; /* Start hidden */
-    transform: translateX(100px); /* Start from the right */
+    opacity: 0;
+    transform: translateX(100px);
 }
 
 main .section.skills-appear.fade-in {
-    opacity: 1; /* Fully visible */
-    transform: translateX(0); /* Move to original position */
+    opacity: 1;
+    transform: translateX(0);
 }
 
 main .section.experiences-appear {
-    opacity: 0; /* Start hidden */
-    transform: translateX(-100px); /* Start from the left */
+    opacity: 0;
+    transform: translateX(-100px);
 }
 
 main .section.experiences-appear.fade-in {
-    opacity: 1; /* Fully visible */
-    transform: translateX(0); /* Move to original position */
+    opacity: 1;
+    transform: translateX(0);
 }
 
 main .section.contact-appear {
-    opacity: 0; /* Start hidden */
-    transform: translateY(20px); /* Start from below */
+    opacity: 0;
+    transform: translateY(20px);
 }
 
 main .section.contact-appear.fade-in {
-    opacity: 1; /* Fully visible */
-    transform: translateY(0); /* Move to original position */
+    opacity: 1;
+    transform: translateY(0);
 }
 
 main section:hover {
     box-shadow: 0 0 15px rgb(85, 93, 80);
-    transform: scale(1.02); /* Slightly scale up on hover */
-    transition: transform 0.3s ease; /* Smooth transition for scaling */
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
 }
 
 main section:active {
@@ -232,91 +230,91 @@ main section:active {
 }
 
 .social-media {
-    margin-top: 1.5rem; /* Space above social media section */
+    margin-top: 1.5rem;
     color: rgb(85, 93, 80);
     font-weight: bold;
 }
 
 .social-icon {
-    width: 45px; /* Set width for icons */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 1rem; /* Space between icons */
-    transition: transform 0.3s; /* Smooth hover effect */
+    width: 50px;
+    height: auto;
+    margin-right: 1rem;
+    transition: transform 0.3s;
 }
 
 .social-icon:hover {
-    transform: scale(1.1); /* Scale up on hover */
+    transform: scale(1.1);
 }
 
 .skills-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns */
-    gap: 2rem; /* Space between the blocks */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
 }
 
 .skill-item {
-    background-color: rgb(51, 54, 49); /* Background color for skill items */
-    border-radius: 8px; /* Rounded corners */
-    padding: 1.5rem; /* Padding inside each skill item */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation for hover effect */
-    text-align: center; /* Center text */
+    background-color: rgb(51, 54, 49);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
 }
 
 .skill-item:hover {
-    transform: scale(1.05); /* Lift effect on hover */
-    box-shadow: 0 4px 15px rgb(85, 93, 80); /* Shadow effect on hover */
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgb(85, 93, 80);
 }
 
 .skill-image {
-    height: 200px; /* Adjust size as needed */
-    width: 300px; /* Adjust size as needed */
-    margin-bottom: 0.1rem; /* Space between image and title */
+    height: 200px;
+    width: 300px;
+    margin-bottom: 0.1rem;
 }
 
 .skill-item h3 {
-    font-size: 2rem; /* Adjust the size as needed */
-    color: rgb(244, 194, 194); /* Title color */
-    font-weight: 600; /* Font weight for titles */
+    font-size: 2rem;
+    color: rgb(244, 194, 194);
+    font-weight: 600;
 }
 
 .skill-item p {
-    font-size: 1.2rem; /* Adjust the size as needed */
+    font-size: 1.2rem;
 }
 
 .skill-item ul {
-    list-style-type: disc; /* Use bullet points for programming skills */
-    padding-left: 20px; /* Indent the list */
-    text-align: left; /* Align text to the left for better readability */
+    list-style-type: disc;
+    padding-left: 20px;
+    text-align: left;
 }
 
 .skill-item ul li {
-    font-size: 1rem; /* Font size for list items */
-    margin-bottom: 0.5rem; /* Space between list items */
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .experiences-container {
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    gap: 1.5rem; /* Space between experience items */
-    width: 75%; /* Set width */
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 75%;
     height: auto;
-    margin: 0 auto; /* Center the container */
-    align-items: center; /* Center items horizontally */
+    margin: 0 auto;
+    align-items: center;
 }
 
 .experience-item {
-    background-size: cover; /* Cover the entire area */
-    background-position: center; /* Center the image */
-    border-radius: 8px; /* Rounded corners */
-    padding: 2rem; /* Padding inside each experience item */
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    padding: 2rem;
     color: rgb(55, 56, 40);
-    position: relative; /* Position for pseudo-element */
-    overflow: hidden; /* Hide overflow */
-    transition: transform 0.3s ease; /* Smooth transition for scaling */
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
 }
 
 .experience-item:hover {
-    transform: scale(1.05); /* Slightly scale up on hover */
+    transform: scale(1.05);
 }
 
 .experience-item::before {
@@ -326,20 +324,20 @@ main section:active {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
-    opacity: 0; /* Start hidden */
-    transition: opacity 0.5s ease; /* Fade effect */
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
 .experience-item:hover::before {
-    opacity: 1; /* Show overlay on hover */
+    opacity: 1;
 }
 
 .experience-item h3,
 .experience-item p {
-    position: relative; /* Position for text */
-    z-index: 1; /* Ensure text is above the overlay */
-    transition: color 0.3s ease; /* Smooth transition for text color */
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
 }
 
 .experience-item:hover h3,
@@ -348,9 +346,9 @@ main section:active {
 }
 
 label {
-    display: block; /* Make labels block elements */
-    margin-bottom: 0.1rem; /* Space below labels */
-    font-weight: bold; /* Bold labels */
+    display: block;
+    margin-bottom: 0.1rem;
+    font-weight: bold;
     color: rgb(85, 93, 80);
 }
 
@@ -358,28 +356,28 @@ input[type="text"],
 input[type="email"],
 input[type="tel"],
 textarea {
-    width: 100%; /* Full width */
-    padding: 0.5rem; /* Padding inside inputs */
-    border: 1px solid #ccc; /* Border style */
-    border-radius: 2px; /* Rounded corners */
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
 }
 
 textarea {
-    resize: vertical; /* Allow vertical resizing */
+    resize: vertical;
 }
 
 button {
-    background-color: rgb(85, 93, 80); /* Button background color */
-    color: white; /* Button text color */
-    padding: 0.75rem 1.5rem; /* Button padding */
-    border: none; /* Remove border */
-    border-radius: 4px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    font-size: 1rem; /* Button font size */
+    background-color: rgb(85, 93, 80);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
 }
 
 button:hover {
-    background-color: rgb(23, 33, 16); /* Darker shade on hover */
+    background-color: rgb(23, 33, 16);
 }
 
 .footer-content {
@@ -399,30 +397,29 @@ footer {
     font-size: 20px;
 }
 
-/* Responsive Styles */
 @media only screen and (max-width: 768px) {
     .menu-button {
-        display: block; /* Show menu button on mobile */
+        display: block;
     }
 
     nav ul {
-        display: none; /* Hide the navigation list by default */
-        flex-direction: column; /* Stack items vertically */
-        position: absolute; /* Position it absolutely */
-        top: 60px; /* Position below the nav */
-        right: 0; /* Align to the right */
-        background-color: rgb(85, 93, 80); /* Background color */
-        width: 100%; /* Full width */
-        padding: 1rem; /* Padding */
-        border-radius: 5px; /* Rounded corners */
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: rgb(85, 93, 80);
+        width: 100%;
+        padding: 1rem;
+        border-radius: 5px;
     }
 
     nav ul.show {
-        display: flex; /* Show the navigation list when active */
+        display: flex;
     }
 
     .header-container {
-        flex-direction: column; /* Stack header content vertically */
+        flex-direction: column;
     }
 
     .header-content {
@@ -431,7 +428,7 @@ footer {
 
     .faye-photo {
         width: 100%;
-        height: auto; /* Maintain aspect ratio */
+        height: auto;
     }
 
     main {
@@ -445,10 +442,10 @@ footer {
     }
 
     .skills-container {
-        grid-template-columns: repeat(1, 1fr); /* One column on mobile */
+        grid-template-columns: repeat(1, 1fr);
     }
 
     .experiences-container {
-        width: 100%; /* Full width on mobile */
+        width: 100%;
     }
 }
